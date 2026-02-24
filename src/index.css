@@ -1,0 +1,90 @@
+/* FULL SCREEN BACKGROUND */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CENTER CONTAINER */
+.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GLASS CARD */
+.glass-card {
+  width: 900px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* ERROR */
+.error {
+  text-align: center;
+  color: #ff4d4d;
+}
+
+/* CONTENT LAYOUT */
+.content {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* WEATHER CARD */
+.weather-card {
+  flex: 1;
+  background: rgba(255,255,255,0.2);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+
+/* CHAT PANEL */
+.chat-box {
+  flex: 1;
+  background: rgba(255,255,255,0.2);
+  padding: 25px;
+  border-radius: 15px;
+  color: white;
+}
+
+/* INPUT */
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 10px;
+}
+
+/* BUTTON */
+button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
