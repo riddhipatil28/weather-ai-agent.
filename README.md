@@ -127,9 +127,9 @@ weather-app/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
-### 1️⃣ Clone repository
+### Clone repository
 
 ```
 git clone https://github.com/riddhipatil28/weather-ai-agent.
@@ -138,7 +138,7 @@ cd weather-app
 
 ---
 
-### 2️⃣ Install backend dependencies
+### Install backend dependencies
 
 ```
 pip install flask flask-cors requests sentence-transformers faiss-cpu ollama
@@ -146,7 +146,7 @@ pip install flask flask-cors requests sentence-transformers faiss-cpu ollama
 
 ---
 
-### 3️⃣ Install frontend dependencies
+### Install frontend dependencies
 
 ```
 npm install
@@ -154,7 +154,7 @@ npm install
 
 ---
 
-### 4️⃣ Run Ollama model
+###  Run Ollama model
 
 ```
 ollama run phi3
@@ -162,7 +162,7 @@ ollama run phi3
 
 ---
 
-## ▶️ Run Application
+## Run Application
 
 ### Start backend
 
