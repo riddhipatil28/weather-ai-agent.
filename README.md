@@ -1,16 +1,224 @@
-# React + Vite
+#  AI Weather Agent
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An autonomous AI weather assistant that understands natural language, retrieves real-time weather data, remembers conversations, and responds intelligently using a **local Large Language Model**.
 
-Currently, two official plugins are available:
+This project demonstrates a **tool-using AI agent architecture** with planning, memory, semantic recall, and context-aware reasoning — built as a full-stack AI system.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ Natural language weather queries
+ Automatic city detection
+ Real-time weather retrieval
+ Temperature prediction model
+ Short-term conversational memory
+ Long-term semantic memory (vector search)
+ Context-aware responses
+ Local LLM (Ollama) — no paid AI APIs
+ Agent planning + tool execution
+ ChatGPT-style React UI
+ Persistent conversation history
+ Real-time weather data via OpenWeatherMap API
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Weather Data Source
+
+This project uses the **OpenWeatherMap API** to retrieve real-time weather data for cities worldwide.
+
+The AI agent automatically:
+
+* Detects the requested city
+* Fetches live weather conditions
+* Retrieves temperature, humidity, wind, and forecast
+* Uses real data to generate grounded responses
+
+Weather data is fetched through:
+
+```
+tools/weather_api.py
+```
+
+API Provider:
+https://openweathermap.org/
+
+---
+
+## Agent Architecture
+
+User Message
+→ Intent Understanding
+→ Planner decides tools
+→ Tool execution (Weather API / Prediction Model)
+→ Memory retrieval (semantic search)
+→ LLM generates grounded response
+→ Memory updated
+
+This is a **tool-augmented, memory-augmented AI agent**.
+
+---
+
+## System Components
+
+### 🔹 Frontend
+
+* React (Vite)
+* Chat-style UI
+* Conversation history restore
+* ChatGPT-like interface
+
+### 🔹 Backend
+
+* Flask API server
+* Agent controller
+* Tool registry
+* Execution engine
+
+### 🔹 AI Layer
+
+* Local LLM via Ollama
+* Prompt-controlled responses
+* Tool-grounded generation
+
+### 🔹 Memory System
+
+* Short-term chat history
+* Long-term vector database (FAISS)
+* Semantic recall with embeddings
+
+### 🔹 Tools
+
+* City detection
+* OpenWeatherMap weather API
+* Temperature prediction model (ML)
+
+---
+
+##  Tech Stack
+
+* Python
+* Flask
+* React (Vite)
+* Ollama (local LLM)
+* OpenWeatherMap API (real-time weather data)
+* FAISS vector database
+* Sentence Transformers
+* Scikit-learn
+
+---
+
+##  Project Structure
+
+```
+weather-app/
+│
+├── src/                     # React frontend
+│
+├── weather-ai/
+│   ├── agent/               # Core agent logic
+│   ├── tools/               # External tools (API + ML)
+│   ├── llm/                 # Local LLM interface
+│   ├── memory_store/        # Vector database
+│   └── server.py            # Flask backend
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone repository
+
+```
+git clone https://github.com/riddhipatil28/weather-ai-agent.
+cd weather-app
+```
+
+---
+
+### 2️⃣ Install backend dependencies
+
+```
+pip install flask flask-cors requests sentence-transformers faiss-cpu ollama
+```
+
+---
+
+### 3️⃣ Install frontend dependencies
+
+```
+npm install
+```
+
+---
+
+### 4️⃣ Run Ollama model
+
+```
+ollama run phi3
+```
+
+---
+
+## ▶️ Run Application
+
+### Start backend
+
+```
+cd weather-ai
+python server.py
+```
+
+### Start frontend
+
+```
+npm run dev
+```
+
+Open browser:
+
+```
+http://localhost:5173
+```
+
+---
+
+## Example Queries
+
+* What is the weather in Pune?
+* Will it rain today in Mumbai?
+* Should I carry an umbrella?
+* Temperature forecast for tomorrow 
+
+---
+
+##  Learning Outcomes
+
+This project demonstrates:
+
+✔ Agent-based AI system design
+✔ Tool-augmented LLMs
+✔ Memory-augmented reasoning
+✔ Semantic vector search
+✔ Prompt engineering
+✔ Local AI deployment
+✔ Real-time API integration
+✔ Full-stack AI application
+
+---
+
+## Future Improvements
+
+* Multi-city comparison
+* Weather alerts
+* Voice interaction
+* Mobile UI
+* Cloud deployment
+* Autonomous planning loop
+* User profiles & personalization
+
+
+
+
